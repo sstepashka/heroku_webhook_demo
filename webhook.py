@@ -5,7 +5,10 @@ from flask import request
 from flask import make_response
 from flask import jsonify
 
+import logging
+
 app = Flask(__name__)
+log = logging.getLogger(__name__)
 
 
 @app.route('/')
@@ -17,6 +20,8 @@ def index():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     params = request.get_json(silent=True, force=True)
+
+    log.info("Params: %s", repr(params))
 
     speech = "speech text example"
     displayText = "display text example"
