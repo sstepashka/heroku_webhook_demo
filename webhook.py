@@ -11,12 +11,12 @@ app = Flask(__name__)
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-stream_handler = logging.StreamHandler()
+# stream_handler = logging.StreamHandler()
 
-log.addHandler(stream_handler)
+# log.addHandler(stream_handler)
 
-app.logger.addHandler(stream_handler)
-app.logger.setLevel(logging.DEBUG)
+# app.logger.addHandler(stream_handler)
+# app.logger.setLevel(logging.DEBUG)
 
 
 app.config['DEBUG'] = True
