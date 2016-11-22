@@ -10,6 +10,17 @@ import logging
 app = Flask(__name__)
 log = logging.getLogger('gunicorn.glogging.Logger')
 
+stream_handler = logging.StreamHandler()
+
+log.addHandler(stream_handler)
+
+app.logger.addHandler(stream_handler)
+app.logger.setLevel(logging.INFO)
+
+
+app.config['DEBUG'] = True
+app.debug = True
+
 
 @app.route('/')
 @app.route('/index')
