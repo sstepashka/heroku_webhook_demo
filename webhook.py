@@ -34,7 +34,7 @@ def webhook():
 
     log.info("Params: %s", repr(params))
 
-    speech = "speech text example"
+    speech = "speech text example 1"
     displayText = "display text example"
     data = {
         "example_key": "example_value"
