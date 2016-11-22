@@ -1,1 +1,1 @@
-web: gunicorn wsgi --log-file -
+web: gunicorn wsgi --log-level DEBUG --reload --log-file -

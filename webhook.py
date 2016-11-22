@@ -8,7 +8,7 @@ from flask import jsonify
 import logging
 
 app = Flask(__name__)
-log = logging.getLogger(__name__)
+log = logging.getLogger('gunicorn.glogging.Logger')
 
 
 @app.route('/')
