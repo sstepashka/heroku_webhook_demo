@@ -8,14 +8,15 @@ from flask import jsonify
 import logging
 
 app = Flask(__name__)
-log = logging.getLogger('gunicorn.glogging.Logger')
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 stream_handler = logging.StreamHandler()
 
 log.addHandler(stream_handler)
 
 app.logger.addHandler(stream_handler)
-app.logger.setLevel(logging.INFO)
+app.logger.setLevel(logging.DEBUG)
 
 
 app.config['DEBUG'] = True
